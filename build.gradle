@@ -1,0 +1,41 @@
+import org.jetbrains.intellij.tasks.RunIdeTask
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.3.6'
+}
+
+apply plugin: 'idea'
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'java'
+
+group 'no.tillerapps'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+intellij {
+    version '2018.2.1'
+}
+
+// Needed this cause original runIde task failed with "not JDK"
+task runIdeSpecificJbreVersion(type: RunIdeTask) {
+    // see https://bintray.com/package/files/jetbrains/intellij-jdk/openjdk8-osx-x64
+    jbreVersion 'jbrex8u152b1293.1'
+    classpath '/Users/kentille/.gradle/caches/modules-2/files-2.1/com.jetbrains/jbre/' + jbreVersion + '_osx_x64/jdk/Contents/Home/lib/tools.jar'
+}
+
+patchPluginXml {
+    changeNotes """
+      Initial release. Sweet stuff.<br/>
+      Recommended shortcuts are <em>⌘↑</em> for <em>Declaration in monosplitter<em> and <em>⌘↓</em> for <em>Goto next splitter<em>. 
+      """
+}

@@ -1,0 +1,26 @@
+<idea-plugin>
+    <id>no.tillerapps.monosplitter</id>
+    <name>MonoSplitter</name>
+    <vendor email="kenneth_tiller@hotmail.com" url="https://github.com/kennethtiller">Kenneth Tiller</vendor>
+
+    <description><![CDATA[
+        Go to declaration in a mono tabbed splitter.
+    ]]></description>
+
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action id="gotoDeclarationInMonoSplitterTabAction"
+                class="com.tillerapps.splitterwiz.GotoDeclarationInMonoSplitterAction"
+                text="Declaration in monosplitter"
+                description="Calls the go to declaration action in a vertical splitter, reusing existing tab if already present and closing any other tabs.">
+            <add-to-group group-id="EditorPopupMenu.GoTo" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
