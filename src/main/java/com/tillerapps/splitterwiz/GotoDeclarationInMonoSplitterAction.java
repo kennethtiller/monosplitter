@@ -49,14 +49,17 @@ public class GotoDeclarationInMonoSplitterAction extends AnAction {
         final FileEditorManagerEx fileEditorManager = FileEditorManagerEx.getInstanceEx(project);
         final EditorWindow editorWindow2 = editorWindow2(project, fileEditorManager);
 
-        fileEditorManager.setCurrentWindow(editorWindow2);
-        gotoTargetElement(navElement);
-
         PsiFile containingFile = navElement.getContainingFile();
         if (containingFile == null) {
-            // we have navigated to something that is not a file nad that's a-ok
+            // we have navigated to something that is not a file and that's a-ok
+            gotoTargetElement(navElement);
             return;
         }
+
+        fileEditorManager.setCurrentWindow(editorWindow2);
+        fileEditorManager.openFile(navElement.getContainingFile().getVirtualFile(), true);
+        gotoTargetElement(navElement);
+
         VirtualFile newViewingFile = containingFile.getVirtualFile();
         Arrays.stream(editorWindow2.getFiles()).forEach(file -> {
             if (!file.equals(newViewingFile)) {

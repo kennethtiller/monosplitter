@@ -10,7 +10,7 @@ apply plugin: 'org.jetbrains.intellij'
 apply plugin: 'java'
 
 group 'no.tillerapps'
-version '1.0.0'
+version '1.0.1'
 
 sourceCompatibility = 1.8
 
@@ -35,7 +35,6 @@ task runIdeSpecificJbreVersion(type: RunIdeTask) {
 
 patchPluginXml {
     changeNotes """
-      Initial release. Sweet stuff.<br/>
-      Recommended shortcuts are <em>⌘↑</em> for <em>Declaration in monosplitter<em> and <em>⌘↓</em> for <em>Goto next splitter<em>. 
+        Will now also open already opened files in new splitter tab.
       """
 }

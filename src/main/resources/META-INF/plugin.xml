@@ -4,7 +4,8 @@
     <vendor email="kenneth_tiller@hotmail.com" url="https://github.com/kennethtiller">Kenneth Tiller</vendor>
 
     <description><![CDATA[
-        Go to declaration in a mono tabbed splitter.
+        Go to declaration in a mono tabbed splitter.<br/>
+        Recommended shortcuts are <em>⌘↑</em> for <em>Declaration in monosplitter<em> and <em>⌘↓</em> for <em>Goto next splitter<em>.
     ]]></description>
 
 
@@ -23,4 +24,6 @@
         </action>
     </actions>
 
+    <change-notes>
+    </change-notes>
 </idea-plugin>
