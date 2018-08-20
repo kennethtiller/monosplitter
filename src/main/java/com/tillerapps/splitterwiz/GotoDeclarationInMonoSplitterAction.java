@@ -23,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by Kenneth Tiller on 15/08/18.
+ * TODO Open "Find usages" in the monosplitter
  */
 public class GotoDeclarationInMonoSplitterAction extends AnAction {
 
