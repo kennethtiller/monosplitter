@@ -10,7 +10,7 @@ apply plugin: 'org.jetbrains.intellij'
 apply plugin: 'java'
 
 group 'no.tillerapps'
-version '1.0.1'
+version '1.0.2'
 
 sourceCompatibility = 1.8
 
@@ -24,6 +24,7 @@ dependencies {
 
 intellij {
     version '2018.2.1'
+    intellij.updateSinceUntilBuild false
 }
 
 // Needed this cause original runIde task failed with "not JDK"
@@ -35,6 +36,6 @@ task runIdeSpecificJbreVersion(type: RunIdeTask) {
 
 patchPluginXml {
     changeNotes """
-        Will now also open already opened files in new splitter tab.
+        Removed IntelliJ version restriction
       """
 }
