@@ -1,4 +1,5 @@
 <idea-plugin>
+    <idea-version since-build="183" />
     <id>no.tillerapps.monosplitter</id>
     <name>MonoSplitter</name>
     <vendor email="kenneth_tiller@hotmail.com" url="https://github.com/kennethtiller">Kenneth Tiller</vendor>
